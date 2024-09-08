@@ -1,0 +1,4 @@
+package com.mepsanakademi.mepsan.controller;
+
+public class StoreController {
+}
