@@ -1,5 +1,6 @@
 package com.mepsanakademi.mepsan.config;
 
+import com.mepsanakademi.mepsan.enums.MachineStatus;
 import com.mepsanakademi.mepsan.model.*;
 import com.mepsanakademi.mepsan.repository.*;
 import org.springframework.boot.CommandLineRunner;
@@ -46,8 +47,8 @@ public class DataInitializer {
                 storeRepository.save(store1);
 
                 // Machine
-                Machine machine1 = new Machine("1", "Aktif", "SN123456");
-                Machine machine2 = new Machine("2", "Bakımda", "SN789012");
+                Machine machine1 = new Machine("1", MachineStatus.ACTIVE, "SN123456");
+                Machine machine2 = new Machine("2", MachineStatus.DISPOSED, "SN789012");
                 machineRepository.save(machine1);
                 machineRepository.save(machine2);
 

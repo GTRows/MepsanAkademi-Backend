@@ -1,5 +1,6 @@
 package com.mepsanakademi.mepsan.model;
 
+import com.mepsanakademi.mepsan.enums.MachineStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,11 +14,11 @@ import java.time.LocalDateTime;
 @Setter
 public class Machine extends BaseEntity {
     private String serialNumber;
-    private String status;
+    private MachineStatus status;
     private String storeId;
     private LocalDateTime installationDate;
 
-    public Machine(String serialNumber, String status, String storeId){
+    public Machine(String serialNumber, MachineStatus status, String storeId){
         this.serialNumber = serialNumber;
         this.status = status;
         this.storeId = storeId;
