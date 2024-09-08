@@ -27,5 +27,14 @@ public class RecyclingTransaction extends BaseEntity{
         this.transactionDate = LocalDateTime.now();
     }
 
+
+    public void setMaterials(List<RecyclingMaterial> materials) {
+        this.materials = materials;
+        calculateReward();
+    }
+
+    private void calculateReward(){
+        this.reward = materials.stream().map(RecyclingMaterial::getReward).reduce(BigDecimal.ZERO, BigDecimal::add);
+    }
 }
 

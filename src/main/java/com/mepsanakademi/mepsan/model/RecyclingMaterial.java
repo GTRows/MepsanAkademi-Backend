@@ -11,6 +11,6 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 public class RecyclingMaterial {
     private String materialId;
-    private Double weight;
+    private int count;
     private BigDecimal reward;
 }

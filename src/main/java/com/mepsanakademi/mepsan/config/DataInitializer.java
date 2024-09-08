@@ -66,13 +66,13 @@ public class DataInitializer {
                 // RecyclingTransaction
                 RecyclingTransaction transaction1 = new RecyclingTransaction("1", new ArrayList<RecyclingMaterial>(), "1", new BigDecimal("10.00"));
                 List<RecyclingMaterial> materials1 = new ArrayList<RecyclingMaterial>();
-                materials1.add(new RecyclingMaterial(material1.getId(), 1.0, new BigDecimal("0.50")));
-                materials1.add(new RecyclingMaterial(material1.getId(), 1.0, new BigDecimal("1.00")));
+                materials1.add(new RecyclingMaterial(material1.getId(), 1, new BigDecimal("0.50")));
+                materials1.add(new RecyclingMaterial(material1.getId(), 2, new BigDecimal("1.00")));
                 transaction1.setMaterials(materials1);
                 RecyclingTransaction transaction2 = new RecyclingTransaction("2", new ArrayList<RecyclingMaterial>(), "2", new BigDecimal("15.00"));
                 List<RecyclingMaterial> materials2 = new ArrayList<RecyclingMaterial>();
-                materials2.add(new RecyclingMaterial(material1.getId(), 2.0, new BigDecimal("1.00")));
-                materials2.add(new RecyclingMaterial(material2.getId(), 1.0, new BigDecimal("0.50")));
+                materials2.add(new RecyclingMaterial(material1.getId(), 3, new BigDecimal("1.00")));
+                materials2.add(new RecyclingMaterial(material2.getId(), 1, new BigDecimal("0.50")));
                 transaction2.setMaterials(materials2);
                 recyclingTransactionRepository.save(transaction1);
                 recyclingTransactionRepository.save(transaction2);
