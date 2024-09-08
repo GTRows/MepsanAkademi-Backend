@@ -52,27 +52,27 @@ public class DataInitializer {
                 machineRepository.save(machine2);
 
                 // Material
-                Material material1 = new Material("PET", new BigDecimal("0.50"), LocalDateTime.now());
-                Material material2 = new Material("Cam", new BigDecimal("1.00"), LocalDateTime.now());
+                Material material1 = new Material("PET", 0.50, LocalDateTime.now());
+                Material material2 = new Material("Cam", 1.00, LocalDateTime.now());
                 materialRepository.save(material1);
                 materialRepository.save(material2);
 
                 // User
-                User user1 = new User("1", 123456, new BigDecimal("10.00"), LocalDateTime.now());
-                User user2 = new User("2", 789012, new BigDecimal("15.00"), LocalDateTime.now());
+                User user1 = new User("1", "example@example.com", "50511111111", "123456", 10.00, LocalDateTime.now());
+                User user2 = new User("2","example2@example.com", "50522222222", "789012", 15.00, LocalDateTime.now());
                 userRepository.save(user1);
                 userRepository.save(user2);
 
                 // RecyclingTransaction
-                RecyclingTransaction transaction1 = new RecyclingTransaction("1", new ArrayList<RecyclingMaterial>(), "1", new BigDecimal("10.00"));
+                RecyclingTransaction transaction1 = new RecyclingTransaction("1", new ArrayList<RecyclingMaterial>(), "1", 10.0);
                 List<RecyclingMaterial> materials1 = new ArrayList<RecyclingMaterial>();
-                materials1.add(new RecyclingMaterial(material1.getId(), 1, new BigDecimal("0.50")));
-                materials1.add(new RecyclingMaterial(material1.getId(), 2, new BigDecimal("1.00")));
+                materials1.add(new RecyclingMaterial(material1.getId(), 1, 0.50));
+                materials1.add(new RecyclingMaterial(material1.getId(), 2, 1.00));
                 transaction1.setMaterials(materials1);
-                RecyclingTransaction transaction2 = new RecyclingTransaction("2", new ArrayList<RecyclingMaterial>(), "2", new BigDecimal("15.00"));
+                RecyclingTransaction transaction2 = new RecyclingTransaction("2", new ArrayList<RecyclingMaterial>(), "2", 15.0);
                 List<RecyclingMaterial> materials2 = new ArrayList<RecyclingMaterial>();
-                materials2.add(new RecyclingMaterial(material1.getId(), 3, new BigDecimal("1.00")));
-                materials2.add(new RecyclingMaterial(material2.getId(), 1, new BigDecimal("0.50")));
+                materials2.add(new RecyclingMaterial(material1.getId(), 3, 1.00));
+                materials2.add(new RecyclingMaterial(material2.getId(), 1, 0.50));
                 transaction2.setMaterials(materials2);
                 recyclingTransactionRepository.save(transaction1);
                 recyclingTransactionRepository.save(transaction2);

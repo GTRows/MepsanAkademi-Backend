@@ -5,15 +5,20 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Document(collection = "Materials")
+@Document(collection = "materials")
 @Getter
 @Setter
 @AllArgsConstructor
 public class Material extends BaseEntity{
     private String type;
-    private BigDecimal rewardPerItem;
+    private double rewardPerItem;
     private LocalDateTime createdAt;
+
+    public Material(String type, double rewardPerItem){
+        this.type = type;
+        this.rewardPerItem = rewardPerItem;
+        this.createdAt = LocalDateTime.now();
+    }
 }

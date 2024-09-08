@@ -14,4 +14,12 @@ public class MaterialService extends GenericService<Material> {
         super(materialRepository);
         this.materialRepository = materialRepository;
     }
+
+    protected double GetMaterialBalance(String materialId) throws Exception {
+        Material material = materialRepository.findById(materialId).orElse(null);
+        if (material == null) {
+            throw new Exception("Material not found for id: " + materialId);
+        }
+        return material.getRewardPerItem();
+    }
 }
